@@ -1,0 +1,36 @@
+{
+  // https://nuxt.com/docs/guide/concepts/typescript
+  "extends": "./.nuxt/tsconfig.json",
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "lib": ["ESNext", "DOM"],
+    "strict": true,
+    "useDefineForClassFields": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+    "esModuleInterop": true,
+    "allowJs": true,
+    "sourceMap": true,
+    "noEmit": true,
+    "allowSyntheticDefaultImports": true,
+    "types": ["@pinia/nuxt"],
+    "paths": {
+      "@/*": ["./app/*"]
+    }
+  },
+  "include": [
+    "app/**/*.ts",
+    "app/**/*.d.ts",
+    "app/**/*.tsx",
+    "app/**/*.js",
+    "app/**/*.vue",
+    "./*.vue",
+    "./*.ts",
+    "env.d.ts",
+    ".nuxt/nuxt.d.ts"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "Nuxt3 SM Starter",
+  "icons": [
+    {
+      "src": "/android-icon-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/android-icon-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}

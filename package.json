@@ -1,0 +1,49 @@
+{
+  "name": "nuxt3-sm-starter",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "eslint": "eslint",
+    "eslint:fix": "eslint --fix",
+    "stylelint": "stylelint \"**/*.{scss,vue,css}\"",
+    "stylelint:fix": "stylelint --fix",
+    "format": "prettier --write .",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "prepare": "git config core.hooksPath .git-hooks || echo 'Not in a git repo'"
+  },
+  "lint-staged": {
+    "*.{ts,vue}": [
+      "npm run eslint:fix",
+      "npm run format"
+    ],
+    "*.{scss,vue}": [
+      "npm run stylelint:fix",
+      "npm run format"
+    ]
+  },
+  "dependencies": {
+    "nuxt": "^3.13.2",
+    "vue": "latest",
+    "vue-router": "latest"
+  },
+  "devDependencies": {
+    "@nuxt/eslint": "^0.6.0",
+    "@nuxtjs/stylelint-module": "^5.2.0",
+    "@vueuse/nuxt": "^11.1.0",
+    "prettier": "^3.3.3",
+    "sass": "1.79.4",
+    "stylelint": "^16.10.0",
+    "stylelint-config-html": "^1.1.0",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-recommended-vue": "^1.5.0",
+    "stylelint-config-standard-scss": "^13.1.0",
+    "stylelint-config-standard-vue": "^1.0.0",
+    "stylelint-order": "^6.0.4",
+    "stylelint-prettier": "^5.0.2",
+    "vue-eslint-parser": "^9.4.3"
+  }
+}

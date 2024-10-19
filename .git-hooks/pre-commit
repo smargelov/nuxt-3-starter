@@ -1,0 +1,11 @@
+#!/bin/bash
+echo "Running linters..."
+npx lint-staged --concurrent false
+
+if [ $? -ne 0 ]; then
+  echo "Linters completed with errors. The commit has been cancelled."
+  exit 1
+fi
+
+echo "The linters passed without errors. Let's continue with the commit."
+exit 0
