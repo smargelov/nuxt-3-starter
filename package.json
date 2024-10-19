@@ -5,10 +5,11 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
+    "typecheck": "npx nuxi typecheck",
     "eslint": "eslint",
     "eslint:fix": "eslint --fix",
     "stylelint": "stylelint \"**/*.{scss,vue,css}\"",
-    "stylelint:fix": "stylelint --fix",
+    "stylelint:fix": "stylelint \"**/*.{scss,vue,css}\" --fix",
     "format": "prettier --write .",
     "generate": "nuxt generate",
     "preview": "nuxt preview",

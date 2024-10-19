@@ -1,4 +1,15 @@
 #!/bin/bash
+echo "Running type check..."
+npx nuxi typecheck
+
+if [ $? -ne 0 ]; then
+  echo "Type checking completed with errors. The commit has been cancelled."
+  exit 1
+fi
+
+echo "Type checking passed. Let's continue with the commit."
+
+
 echo "Running linters..."
 npx lint-staged --concurrent false
 

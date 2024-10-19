@@ -17,17 +17,16 @@
     "sourceMap": true,
     "noEmit": true,
     "allowSyntheticDefaultImports": true,
-    "types": ["@pinia/nuxt"],
     "paths": {
-      "@/*": ["./app/*"]
+      "@/*": ["./src/*"]
     }
   },
   "include": [
-    "app/**/*.ts",
-    "app/**/*.d.ts",
-    "app/**/*.tsx",
-    "app/**/*.js",
-    "app/**/*.vue",
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.js",
+    "src/**/*.vue",
     "./*.vue",
     "./*.ts",
     "env.d.ts",
