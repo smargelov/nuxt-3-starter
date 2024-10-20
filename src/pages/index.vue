@@ -4,8 +4,8 @@
 
 <script setup lang="ts"></script>
 
-<style lang="scss" scoped>
-.index {
-  display: grid;
-}
+<style lang="sass" scoped>
+.index
+  display: grid
+  gap: 9px
 </style>

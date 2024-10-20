@@ -10,11 +10,10 @@
 
 <script setup lang="ts"></script>
 
-<style lang="scss" scoped>
-.main {
-  display: grid;
-  grid-template-rows: min-content 1fr min-content;
-  align-content: start;
-  min-height: 100dvh;
-}
+<style lang="sass" scoped>
+.main
+  display: grid
+  grid-template-rows: min-content 1fr min-content
+  align-content: start
+  min-height: 100dvh
 </style>

@@ -78,12 +78,12 @@ export default defineNuxtConfig({
   },
   srcDir: 'src',
   devtools: { enabled: true },
-  css: ['@/assets/styles/main.scss'],
+  css: ['@/assets/styles/main.sass'],
   vite: {
     css: {
       preprocessorOptions: {
-        scss: {
-          additionalData: '@import "@/assets/styles/scss/variables.scss";',
+        sass: {
+          additionalData: '@import "@/assets/styles/scss/variables.sass"\n',
           api: 'modern-compiler',
         },
       },
