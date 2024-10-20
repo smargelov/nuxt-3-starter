@@ -1,23 +1,24 @@
 export default {
   extends: [
     'stylelint-config-html',
+    'stylelint-config-standard',
     'stylelint-config-recommended-scss',
     'stylelint-config-recommended-vue/scss',
     'stylelint-config-rational-order',
-    'stylelint-prettier/recommended',
   ],
   overrides: [
+    {
+      files: ['**/*.sass'],
+      customSyntax: 'sugarss',
+    },
     {
       files: ['**/*.vue'],
       customSyntax: 'postcss-html',
     },
   ],
-  plugins: [
-    'stylelint-order',
-    'stylelint-prettier',
-    'stylelint-config-rational-order/plugin',
-  ],
+  plugins: ['stylelint-order', 'stylelint-config-rational-order/plugin'],
   rules: {
+    'import-notation': null,
     'no-descending-specificity': null,
     'order/properties-order': [],
     'plugin/rational-order': [
@@ -27,7 +28,6 @@ export default {
         'empty-line-between-groups': false,
       },
     ],
-    'prettier/prettier': true,
     'selector-pseudo-element-no-unknown': [
       true,
       {
@@ -40,7 +40,6 @@ export default {
         ignorePseudoClasses: ['input-placeholder'],
       },
     ],
-    'scss/no-global-function-names': null,
     'selector-no-qualifying-type': [
       true,
       {
@@ -53,6 +52,7 @@ export default {
         ignoreSelectors: ['::-webkit-input-placeholder', '/-moz-.*/'],
       },
     ],
+    'scss/no-global-function-names': null,
     'max-nesting-depth': [
       3,
       {

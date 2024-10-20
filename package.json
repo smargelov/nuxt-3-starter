@@ -6,11 +6,11 @@
     "build": "nuxt build",
     "dev": "nuxt dev",
     "typecheck": "npx nuxi typecheck",
+    "format": "prettier --write .",
     "eslint": "eslint",
     "eslint:fix": "eslint --fix",
-    "stylelint": "stylelint \"**/*.{scss,vue,css}\"",
-    "stylelint:fix": "stylelint \"**/*.{scss,vue,css}\" --fix",
-    "format": "prettier --write .",
+    "stylelint": "stylelint \"**/*.{scss,vue,css,sass}\"",
+    "stylelint:fix": "stylelint \"**/*.{scss,vue,css,sass}\" --fix && npm run format",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
@@ -21,9 +21,8 @@
       "npm run eslint:fix",
       "npm run format"
     ],
-    "*.{scss,vue}": [
-      "npm run stylelint:fix",
-      "npm run format"
+    "*.{scss,sass,vue}": [
+      "npm run stylelint:fix"
     ]
   },
   "dependencies": {
@@ -41,10 +40,11 @@
     "stylelint-config-html": "^1.1.0",
     "stylelint-config-rational-order": "^0.1.2",
     "stylelint-config-recommended-vue": "^1.5.0",
+    "stylelint-config-standard": "^36.0.1",
     "stylelint-config-standard-scss": "^13.1.0",
     "stylelint-config-standard-vue": "^1.0.0",
     "stylelint-order": "^6.0.4",
-    "stylelint-prettier": "^5.0.2",
+    "sugarss": "^4.0.1",
     "vue-eslint-parser": "^9.4.3"
   }
 }
