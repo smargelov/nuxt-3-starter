@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+    ssr: false,
     app: {
         head: {
             title: 'Nuxt Vite TypeScript - Starter Template with ESLint, Prettier, Stylelint, Commitlint, VueUse, and more',
@@ -73,6 +74,11 @@ export default defineNuxtConfig({
                     content: 'https://nuxtjs.org',
                 },
             ],
+            script: [
+                {
+                    src: 'https://telegram.org/js/telegram-web-app.js',
+                },
+            ],
         },
     },
     srcDir: 'src',
@@ -90,6 +96,9 @@ export default defineNuxtConfig({
             },
         },
     },
-    modules: ['@vueuse/nuxt', '@nuxt/eslint'],
+    devServer: {
+        host: '192.168.31.188',
+    },
+    modules: ['@vueuse/nuxt', '@nuxt/eslint', '@pinia/nuxt'],
     compatibilityDate: '2024-10-20',
 })

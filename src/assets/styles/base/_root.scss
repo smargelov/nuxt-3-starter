@@ -1,6 +1,20 @@
 :root {
     --main-font-size: 14px;
-    --color-main-text: $color-black;
+    --bg-color: var(--tg-theme-bg-color);
+    --text-color: var(--tg-theme-text-color);
+    --hint-color: var(--tg-theme-hint-color);
+    --link-color: var(--tg-theme-link-color);
+    --button-color: var(--tg-theme-button-color);
+    --button-text-color: var(--tg-theme-button-text-color);
+    --secondary-bg-color: var(--tg-theme-secondary-bg-color);
+    --header-bg-color: var(--tg-theme-header-bg-color);
+    --bottom-bar-bg-color: var(--tg-theme-bottom-bar-bg-color);
+    --accent-text-color: var(--tg-theme-accent-text-color);
+    --section-bg-color: var(--tg-theme-section-bg-color);
+    --section-header-text-color: var(--tg-theme-section-header-text-color);
+    --section-separator-color: var(--tg-theme-section-separator-color);
+    --subtitle-text-color: var(--tg-theme-subtitle-text-color);
+    --destructive-text-color: var(--tg-theme-destructive-text-color);
 
     @media screen and (min-width: $sm) {
         --main-font-size: 16px;
