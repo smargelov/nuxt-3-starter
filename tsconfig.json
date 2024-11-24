@@ -1,35 +1,35 @@
 {
-  // https://nuxt.com/docs/guide/concepts/typescript
-  "extends": "./.nuxt/tsconfig.json",
-  "compilerOptions": {
-    "target": "ESNext",
-    "module": "ESNext",
-    "moduleResolution": "Node",
-    "lib": ["ESNext", "DOM"],
-    "strict": true,
-    "useDefineForClassFields": true,
-    "skipLibCheck": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "verbatimModuleSyntax": true,
-    "esModuleInterop": true,
-    "allowJs": true,
-    "sourceMap": true,
-    "noEmit": true,
-    "allowSyntheticDefaultImports": true,
-    "paths": {
-      "@/*": ["./src/*"]
-    }
-  },
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.d.ts",
-    "src/**/*.tsx",
-    "src/**/*.js",
-    "src/**/*.vue",
-    "./*.vue",
-    "./*.ts",
-    "env.d.ts",
-    ".nuxt/nuxt.d.ts"
-  ]
+    // https://nuxt.com/docs/guide/concepts/typescript
+    "extends": "./.nuxt/tsconfig.json",
+    "compilerOptions": {
+        "target": "ESNext",
+        "module": "ESNext",
+        "moduleResolution": "Node",
+        "lib": ["ESNext", "DOM"],
+        "strict": true,
+        "useDefineForClassFields": true,
+        "skipLibCheck": true,
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "verbatimModuleSyntax": true,
+        "esModuleInterop": true,
+        "allowJs": true,
+        "sourceMap": true,
+        "noEmit": true,
+        "allowSyntheticDefaultImports": true,
+        "paths": {
+            "@/*": ["./src/*"]
+        }
+    },
+    "include": [
+        "src/**/*.ts",
+        "src/**/*.d.ts",
+        "src/**/*.tsx",
+        "src/**/*.js",
+        "src/**/*.vue",
+        "./*.vue",
+        "./*.ts",
+        "env.d.ts",
+        ".nuxt/nuxt.d.ts"
+    ]
 }
