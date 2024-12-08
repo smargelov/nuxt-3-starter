@@ -1,20 +1,25 @@
 import { defineStore } from 'pinia'
-import { useWebApp, useWebAppCloudStorage } from 'vue-tg'
-import type { DataUnsafeType, TgUserType, WebAppType } from '@/types/tgWebApp.type'
+import { useWebApp, useWebAppCloudStorage, useWebAppRequests } from 'vue-tg'
+import type { DataUnsafeType, TgContactType, TgUserType, WebAppType } from '@/types/tgWebApp.type'
 import { WEB_APP_MINIMAL_VERSION } from '@/utils/constants'
 
 interface IUseTgDataReturn {
     tgUser: ComputedRef<TgUserType>
     init: () => Promise<void>
     isTgLoading: Ref<boolean>
+    tgContact: Ref<Nullable<TgContactType>>
     tgError: Ref<Nullable<Error>>
+    clearError: () => void
+    removeFromCloudStorage: (title: string) => Promise<void>
 }
 
 export const useTgData = defineStore('tgData', (): IUseTgDataReturn => {
     const webAppData = ref<Nullable<WebAppType>>(null)
     const dataUnsafe = ref<Nullable<DataUnsafeType>>(null)
+    const tgContact = ref<Nullable<TgContactType>>(null)
     const isTgLoading = ref(false)
     const tgError = ref<Nullable<Error>>(null)
+    const storage = useWebAppCloudStorage()
 
     const tgUser = computed<TgUserType>(() => dataUnsafe.value?.user)
 
@@ -29,6 +34,8 @@ export const useTgData = defineStore('tgData', (): IUseTgDataReturn => {
             ) {
                 await getInitDataUnsafe()
             }
+
+            await getTgContact()
         } catch (error) {
             tgError.value = error as Error
         } finally {
@@ -40,10 +47,14 @@ export const useTgData = defineStore('tgData', (): IUseTgDataReturn => {
         await useWebAppCloudStorage().setStorageItem(title, JSON.stringify(data))
     }
 
+    const removeFromCloudStorage = async (title: string) => {
+        await useWebAppCloudStorage().removeStorageItem(title)
+    }
+
+    const clearError = () => (tgError.value = null)
+
     const getInitDataUnsafe = async () => {
         try {
-            const storage = useWebAppCloudStorage()
-
             const cloudInitDataUnsafe = await storage.getStorageItem(
                 INIT_DATA_UNSAFE_CLOUD_STORAGE_KEY
             )
@@ -64,10 +75,22 @@ export const useTgData = defineStore('tgData', (): IUseTgDataReturn => {
         }
     }
 
+    const getTgContact = async () => {
+        useWebAppRequests().requestContact((ok: boolean, response) => {
+            if (ok) {
+                // eslint-disable-next-line no-console
+                console.log(ok, response.responseUnsafe)
+            }
+        })
+    }
+
     return {
         isTgLoading,
         tgError,
         tgUser,
+        tgContact,
+        clearError,
         init,
+        removeFromCloudStorage,
     }
 })
