@@ -27,13 +27,21 @@
     },
     "dependencies": {
         "nuxt": "^3.13.2",
+        "pinia": "^2.2.6",
         "vue": "latest",
-        "vue-router": "latest"
+        "vue-router": "latest",
+        "vue-tg": "^0.8.0"
     },
     "devDependencies": {
+        "@element-plus/nuxt": "^1.1.0",
         "@nuxt/eslint": "^0.6.0",
+        "@nuxtjs/google-fonts": "^3.2.0",
         "@nuxtjs/stylelint-module": "^5.2.0",
+        "@pinia/nuxt": "^0.7.0",
+        "@typescript-eslint/eslint-plugin": "^8.15.0",
+        "@typescript-eslint/parser": "^8.15.0",
         "@vueuse/nuxt": "^11.1.0",
+        "eslint": "^9.15.0",
         "prettier": "^3.3.3",
         "sass": "1.79.4",
         "stylelint": "^16.10.0",
@@ -45,6 +53,8 @@
         "stylelint-config-standard-vue": "^1.0.0",
         "stylelint-order": "^6.0.4",
         "sugarss": "^4.0.1",
-        "vue-eslint-parser": "^9.4.3"
+        "typescript": "5.5.4",
+        "vue-eslint-parser": "^9.4.3",
+        "vue-tsc": "^2.1.10"
     }
 }

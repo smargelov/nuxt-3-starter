@@ -1,8 +1,70 @@
+@use '../utils/variables' as *;
+
+@mixin light-theme-colors {
+    --color-primary: #2481cc;
+    --color-success: #3ca40b;
+    --color-warning: #e6a23c;
+    --color-danger: #ff3b30;
+    --color-info: #999;
+    --section-bg-color: var(--tg-theme-section-bg-color, #fff);
+    --bg-color: var(--tg-theme-bg-color, #fff);
+    --button-text-color: var(--tg-theme-button-text-color, #fff);
+    --bottom-bar-bg-color: var(--tg-theme-bottom-bar-bg-color, #e4e4e4);
+    --section-separator-color: var(--tg-theme-section-separator-color, #eaeaea);
+    --header-bg-color: var(--tg-theme-header-bg-color, #efeff3);
+    --secondary-bg-color: var(--tg-theme-secondary-bg-color, #efeff3);
+    --subtitle-text-color: var(--tg-theme-subtitle-text-color, #999);
+    --hint-color: var(--tg-theme-hint-color, #999);
+    --section-header-text-color: var(--tg-theme-section-header-text-color, #6d6d71);
+    --text-color: var(--tg-theme-text-color, #000);
+    --link-color: var(--tg-theme-link-color, var(--color-primary));
+    --button-color: var(--tg-theme-button-color, var(--color-primary));
+    --accent-text-color: var(--tg-theme-accent-text-color, var(--color-primary));
+    --destructive-text-color: var(--tg-theme-destructive-text-color, var(--color-danger));
+}
+
+@mixin dark-theme-colors {
+    --color-primary: #2ea6ff;
+    --color-success: #7fe84b;
+    --color-warning: #e6a23c;
+    --color-danger: #ef5b5b;
+    --color-info: #999;
+    --button-text-color: var(--tg-theme-button-text-color, #fff);
+    --text-color: var(--tg-theme-text-color, #fff);
+    --subtitle-text-color: var(--tg-theme-subtitle-text-color, #b1c3d5);
+    --hint-color: var(--tg-theme-hint-color, #b1c3d5);
+    --section-header-text-color: var(--tg-theme-section-header-text-color, #b1c3d5);
+    --bottom-bar-bg-color: var(--tg-theme-bottom-bar-bg-color, #213040);
+    --section-separator-color: var(--tg-theme-section-separator-color, #213040);
+    --section-bg-color: var(--tg-theme-section-bg-color, #18222d);
+    --bg-color: var(--tg-theme-bg-color, #18222d);
+    --header-bg-color: var(--tg-theme-header-bg-color, #131415);
+    --secondary-bg-color: var(--tg-theme-secondary-bg-color, #131415);
+    --link-color: var(--tg-theme-link-color, #62bcf9);
+}
+
 :root {
     --main-font-size: 14px;
-    --color-main-text: $color-black;
+
+    @include light-theme-colors;
 
     @media screen and (min-width: $sm) {
         --main-font-size: 16px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        &:not(.light) {
+            @include dark-theme-colors;
+        }
+    }
+
+    // stylelint-disable-next-line selector-no-qualifying-type
+    html.light {
+        @include light-theme-colors;
+    }
+
+    // stylelint-disable-next-line selector-no-qualifying-type
+    html.dark {
+        @include dark-theme-colors;
     }
 }
